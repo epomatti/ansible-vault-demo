@@ -1,0 +1,9 @@
+---
+- name: Ansible Vault Demo
+  hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: Copy required files
+      ansible.builtin.include_tasks: tasks/files.yml

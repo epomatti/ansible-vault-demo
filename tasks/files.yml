@@ -1,0 +1,7 @@
+- name: Copy the encrypted configuration
+  ansible.builtin.copy:
+    src: files/config-encrypted.yml
+    dest: config.yml
+    owner: root
+    group: root
+    mode: "0600"

@@ -1,0 +1,19 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "ansible",
+        "cpus",
+        "grafana",
+        "journalctl",
+        "keyrings",
+        "loki",
+        "NOPASSWD",
+        "prometheus",
+        "virtualbox"
+    ],
+    "ignoreWords": [],
+    "import": []
+}
