@@ -12,6 +12,7 @@
         "loki",
         "NOPASSWD",
         "prometheus",
+        "pwgen",
         "virtualbox"
     ],
     "ignoreWords": [],

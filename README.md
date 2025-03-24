@@ -4,6 +4,12 @@ Sample for using Ansible Vault to secure secrets in Git repository.
 
 ## Configure
 
+To make this tutorial simple, create a file with the vault key:
+
+```
+pwgen 64 > .vault_key
+```
+
 Edit the template file and encrypt it with the vault password:
 
 ```sh
