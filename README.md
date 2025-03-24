@@ -6,14 +6,15 @@ Sample for using Ansible Vault to secure secrets in Git repository.
 
 To make this tutorial simple, create a file with the vault key:
 
-```
+```sh
 pwgen 64 > .vault_key
+chmod 600 .vault_key
 ```
 
 Edit the template file and encrypt it with the vault password:
 
 ```sh
-ansible-vault encrypt tasks/files/config-plain.yml --output tasks/files/config-encrypted.yml
+ansible-vault encrypt tasks/files/config-plain.yml --vault-password-file .vault_key --output tasks/files/config-encrypted.yml
 ```
 
 If you're using the file in place, revert the changes:
@@ -22,15 +23,14 @@ If you're using the file in place, revert the changes:
 git restore tasks/files/config-plain.yml
 ```
 
-These operations can be automated with `--vault-password-file <path-to-vault-key-file>`.
-
+If the vault key password is protected, changes can now be security committed to the repository.
 
 ## Pull
 
-On your remote destination, use the `--vault-password-file` argument to pull:
+On your remote destination, use the `--vault-password-file` argument to pull the configuration:
 
 ```sh
-sudo ansible-pull --vault-password-file ~/.vault_key -U https://github.com/epomatti/ansible-vault-demo
+sudo ansible-pull --vault-password-file .vault_key -U https://github.com/epomatti/ansible-vault-demo
 ```
 
 The file will be decrypted and copied to your current directory:
