@@ -33,7 +33,9 @@ On your remote destination, use the `--vault-password-file` argument to pull the
 sudo ansible-pull --vault-password-file .vault_key -U https://github.com/epomatti/ansible-vault-demo
 ```
 
-The file will be decrypted and copied to your current directory:
+By default the output will be relative to `/root/.ansible/pull/`.
+
+The file will be decrypted and copied to the pull directory.
 
 ```sh
 cat config.yml
