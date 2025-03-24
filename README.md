@@ -57,5 +57,3 @@ There are a few options that can be used to protect a versioned file that will r
 - Change file permissions with `chmod 444` but this is not really effective.
 - Use proprietary SCM protection mechanisms, such as GitHub [protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) functionality.
 - Git submodules with `git submodule add <repo-url> locked_file`
-
-For simplicity, this project implements a `chmod 444` control.
